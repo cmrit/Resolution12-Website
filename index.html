@@ -30,7 +30,7 @@
   <body>
     <div class="container">
 		
-		<div class="modal hide fade" id="mainModal" style="background: #0f0f0f;color: #999;-moz-box-shadow: 0 0 5px 5px #888;-webkit-box-shadow: 0 0 5px 5px#08c;box-shadow: 0 0 40px 1px #00C2ff;">
+		<div class="modal hide fade link_modal" id="mainModal" style="">
 				<div class="modal-header">
 				<button type="button" class="close" data-dismiss="modal">x</button>
 					<h3 style="font-family: my_font;font-size:20px;border: 0px;"><b>About</b></h3>
@@ -125,7 +125,6 @@ techniques both in practical fields as well in academics.</p>
 			$("#footer_hr1").animate({
 				width: '100%'
 			},1000).delay(100).fadeOut(300).fadeIn(200).fadeOut(200).fadeIn(200).fadeOut(200).fadeIn(200);
-			//.fadeIn(100).fadeOut(100).fadeIn(100).fadeOut(100).fadeIn(100).fadeOut(100).fadeIn(100).fadeOut(100).fadeIn(100);
 			
 			$(".home_link").mouseenter(function(){
 				var b=$(this).attr('id');
@@ -139,7 +138,6 @@ techniques both in practical fields as well in academics.</p>
 			
 			$(".home_link").click(function(){
 			$("#mainModal").modal('toggle');
-			
 			});
 			
 			$("#mainModal").on("show",function(){

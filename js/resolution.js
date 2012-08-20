@@ -25,15 +25,31 @@ $(document).ready(function(){
 				$(".home_link").animateOn();
 			
 			$(".home_link").click(function(){
-			$("#mainModal").modal('toggle');
-			});
+			var id=$(this).attr('id');
+			if(id=='ban_img1'){
+				$("#mainModal").modal('toggle');
+			}
+			if(id=='ban_img4'){
+				$("#contactModal").modal('toggle');
+			}
+		});
 			
 			$("#mainModal").on("show",function(){
 				$("#blah").hide();
 				$("#blah2").fadeIn(500);
 			});
 			
+			$("#contactModal").on("show",function(){
+				$("#blah").hide();
+				$("#blah2").fadeIn(500);
+			});
+			
 			$("#mainModal").on("hide",function(){
+				$("#blah").show();
+				$("#blah2").hide();
+			});
+			
+			$("#contactModal").on("hide",function(){
 				$("#blah").show();
 				$("#blah2").hide();
 			});

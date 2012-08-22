@@ -16,7 +16,7 @@ $(document).ready(function(){
 							$("#"+a).css("opacity","1").stop(1000).fadeIn(500);
 						});
 						obj.mouseleave(function(){
-							$("#"+a).css("opacity","0.8").stop(1000).fadeOut(800);
+							$("#"+a).css("opacity","0.8").stop(1000).fadeTo(500,0.3);
 						});
 					});
 				}
@@ -31,6 +31,23 @@ $(document).ready(function(){
 			}
 			if(id=='ban_img4'){
 				$("#contactModal").modal('toggle');
+			}
+			if(id=='ban_img2'){
+				$("#about-head").fadeOut(500);
+				$("#gallery-head").fadeOut(500);
+				$("#contact-head").fadeOut(500);
+				var t=$(this).attr('data-blah');
+				if(t=='hmm'){
+					$("#events-head").animate({
+					'margin-top': '20px',
+					'margin-left': '-245px',
+					'width': '0px'
+				},500).hide(0);
+				$("#my_id").delay(500).fadeIn();
+				$("#icons_sprite").delay(500).fadeIn(500);
+				$(t).parent().removeClass();
+				}
+				
 			}
 		});
 			
@@ -54,16 +71,43 @@ $(document).ready(function(){
 				$("#blah2").hide();
 			});
 			
+			
+			$(".glow_link").mouseenter(function(){
+				var id=$(this).attr('id');
+				var a=$(this).children(":first").attr('id');
+				for(var i=0;i<=10;i++){
+					if(a=='icon'+i){
+						$("#"+a).stop().fadeTo(500,1.0);
+					}
+					else{
+						$("#icon"+i).stop().fadeTo(200,0.2);
+					}
+				}
+			});
+			
+			$(".glow_link").mouseleave(function(){
+				var id=$(this).attr('id');
+				for(var i=0;i<=10;i++){
+						$("#icon"+i).stop().fadeTo(500,1.0);
+				}
+			});
+			
+			
+			
+			
+			
 			function show_first(){
 			
-				$("#ban_img1").delay(200).fadeIn(500);
-				$("#ban_img2").delay(300).fadeIn(500);
-				$("#ban_img3").delay(400).fadeIn(500);
-				$("#ban_img4").delay(500).fadeIn(500);
+				$("#ban_img1").delay(200).fadeTo(500,1.0);
+				$("#ban_img2").delay(300).fadeTo(500,1.0);
+				$("#ban_img3").delay(400).fadeTo(500,1.0);
+				$("#ban_img4").delay(500).fadeTo(500,1.0);
 				
-				$("#ban_img1").delay(900).fadeOut(500);
-				$("#ban_img2").delay(950).fadeOut(500);
-				$("#ban_img3").delay(1000).fadeOut(500);
-				$("#ban_img4").delay(1050).fadeOut(500);
+				$("#ban_img1").delay(900).fadeTo(500,0.3);
+				$("#ban_img2").delay(950).fadeTo(500,0.3);
+				$("#ban_img3").delay(1000).fadeTo(500,0.3);
+				$("#ban_img4").delay(1050).fadeTo(500,0.3);
+				
+				
 			}
 		});

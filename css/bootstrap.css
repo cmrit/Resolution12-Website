@@ -4989,7 +4989,7 @@ a.badge:hover {
 
 .home_link{
 	text-decoration: none;
-	color: #333;
+	color: #999;
 	font-family: 'my_font';
 }
 
@@ -5013,3 +5013,25 @@ a.home_link:hover{
 	box-shadow: 0 0 40px 1px #00C2ff;
 }
 
+/*  Icon sprites */
+.web, .quiz, .it, .treasure, .paper,
+.dumb, .coding, .photo, .gaming, .ice
+{ display: block; background: url('../img/icon_sprite.png') no-repeat; }
+ 
+.web { background-position: -0px -0px; width: 120px; height: 75px; float: left;}
+.quiz { background-position: -0px -75px; width: 79px; height: 75px; float: left;}
+.it { background-position: -0px -150px; width: 87px; height: 75px; float: left;}
+.treasure { background-position: -0px -225px; width: 80px; height: 75px; float: left;}
+.paper { background-position: -0px -300px; width: 120px; height: 75px; float: left;}
+.dumb { background-position: -0px -375px; width: 77px; height: 75px; float: left;}
+.coding { background-position: -0px -450px; width: 83px; height: 75px; float: left;}
+.photo { background-position: -0px -525px; width: 73px; height: 75px; float: left;}
+.gaming { background-position: -0px -600px; width: 119px; height: 75px; float: left;}
+.ice { background-position: -0px -675px; width: 66px; height: 75px; float: left;}
+
+.glow_effect{
+	-moz-box-shadow: 0 0 5px 5px #888;
+	-webkit-box-shadow: 0 0 5px 5px#08c;
+	box-shadow: 0 0 80px 1px #fff;
+	background-color: 	#ccc;
+}

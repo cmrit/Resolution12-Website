@@ -29,7 +29,7 @@
 
   <body>
     <div class="container">
-		
+		<center><span id="news" style="padding-top: 60px;position: absolute;color: #fff;display: none;">asd</span></center>
 		<!-- About Modal -->
 		<div class="modal hide fade link_modal" id="mainModal" style="">
 				<div class="modal-header">
@@ -46,7 +46,27 @@ techniques both in practical fields as well in academics.</p>
 							<p>Resolution '12 provides an excellent arena to showcase the talents of  young & emerging minds.</p>
 				</div>
 			</div>
-			<!-- End Abiut Modal -->
+			<!-- End About Modal -->
+			
+			<!-- Events Modal -->
+		<div class="modal hide fade link_modal" id="eventsModal" style="">
+				<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal">x</button>
+					<h3 style="font-family: my_font;font-size:20px;border: 0px;"><span id="test_img"><b>About</b></span></h3>
+					<hr style="width: 100%;border: 1px solid #08c;">
+				</div>
+				<div class="modal-body" style="margin-top: -30px;" id="events_body">
+				<span id="events_body_span">
+					<h3 style="font-family: my_font;letter-spacing: 3px;">Introduction: </h3>
+							<p>CMRIT is  set up in order to meet the rapid  growing need of I.T. Professionals. The  broad  objectives  of   CMRIT  is  to impart quality education and help students to   develop  creative  thinking, analytical ability   and    to     acquire    managerial 
+techniques both in practical fields as well in academics.</p>
+					<h3 style="font-family: my_font;letter-spacing: 3px;">Resolution '12: </h3>
+							<p>Resolution '12, the annual inter-collegiate post graduate IT Fest, hosted by the Department of MCA, CMRIT Bengaluru. </p>
+							<p>Resolution '12 provides an excellent arena to showcase the talents of  young & emerging minds.</p>
+				</span>
+				</div>
+			</div>
+			<!-- End Events Modal -->
 			
 			
 			<!-- Contact Modal -->
@@ -89,6 +109,69 @@ techniques both in practical fields as well in academics.</p>
 		
       <!-- End Contact Modal -->
       
+	  <!-- Registration Modal -->
+		<div class="modal hide fade link_modal" id="registerModal" style="">
+				<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal">x</button>
+					<h3 style="font-family: my_font;font-size:20px;border: 0px;"><span id="test_img"><b>Registration</b></span></h3>
+					<hr style="width: 100%;border: 1px solid #08c;">
+				</div>
+				<div class="modal-body" style="margin-top: -5px;" id="events_body">
+					<form class="form-horizontal">
+				  <div class="control-group">
+					<label class="control-label" for="inputEmail">College Name: </label>
+					<div class="controls">
+					 <input type="text" id="college_name" placeholder="College Name" class="span3" style="margin: 0 auto;" data-provide="typeahead" data-items="4" data-source='["Christ University","Kristu Jayanthi College"]'>
+					</div>
+				  </div>
+				  <div class="control-group">
+					<label class="control-label" for="inputPassword">No. of Participants: </label>
+					<div class="controls">
+					  <select id="no_students">
+					  <option value="">--Select--</option>
+						<option value="1">1</option>
+						<option value="2">2</option>
+						<option value="3">3</option>
+						<option value="4">4</option>
+						<option value="5">5</option>
+						<option value="6">6</option>
+						<option value="7">7</option>
+						<option value="8">8</option>
+						<option value="9">9</option>
+						<option value="10">10</option>
+						<option value="11">11</option>
+						<option value="12">12</option>
+						<option value="13">13</option>
+						<option value="14">14</option>
+						<option value="15">15</option>
+						<option value="16">16</option>
+					  </select>
+					</div>
+				  </div>
+				   <div class="control-group" id="student_name_fields">
+					
+				  </div>
+				  <div class="control-group">
+					<label class="control-label" for="inputEmail">Student Co-ordinator: </label>
+					<div class="controls">
+					 <input type="text" id="stu_rep_phone" placeholder="Name" class="span3" style="margin: 0 auto;" >
+					 <input type="text" id="stu_rep_phone" placeholder="Mobile Number" class="span3" style="margin: 0 auto;" >
+					</div>
+				  </div>
+				 <div class="control-group">
+					
+					<div class="controls">
+					 
+					</div>
+				  </div>
+				</form>
+				</div>
+				<div class="modal-footer" style="background-color: #000;">
+					<button type="submit" class="btn btn-success">Submit &raquo;</button>
+				</div>
+			</div>
+	  <!-- End Registration Modal-->
+	  
        <div class="blah" style="height: 600px;" id="blah">
 			<div class="span3"  id="banner1" style="height: 600px;">
 				<img src="img/banner1.gif" style="display: none;" id="ban_img1"/>
@@ -124,16 +207,16 @@ techniques both in practical fields as well in academics.</p>
 		  </a>
        </div>-->
 	   <div class="span12" style="display: none;margin-left: 30px;" id="icons_sprite">
-				<a href="#" class="glow_link" id="ice"><span class="ice" id="icon1"></span></a>
-				<a href="#" class="glow_link" id="coding"><span class="coding" id="icon2"></span></a>
-				<a href="#" class="glow_link" id="photo"><span class="photo" id="icon3"></span></a>
-				<a href="#" class="glow_link" id="treasure"><span class="treasure" id="icon4"></span></a>
-				<a href="#" class="glow_link" id="it"><span class="it" id="icon5"></span></a>
-				<a href="#" class="glow_link" id="paper"><span class="paper" id="icon6"></span></a>
-				<a href="#" class="glow_link" id="gaming"><span class="gaming" id="icon7"></span></a>
-				<a href="#" class="glow_link" id="dumb"><span class="dumb" id="icon8"></span></a>
-				<a href="#" class="glow_link" id="quiz"><span class="quiz" id="icon9"></span></a>
-				<a href="#" class="glow_link" id="web"><span class="web" id="icon10"></span></a>
+				<a href="#" class="glow_link" id="ice" data-event='Ice Weasel' ><span class="ice" id="icon1"></span></a>
+				<a href="#" class="glow_link" id="coding" data-event='Codehub'><span class="coding" id="icon2"></span></a>
+				<a href="#" class="glow_link" id="photo" data-event='Eye of GNOME'><span class="photo" id="icon3"></span></a>
+				<a href="#" class="glow_link" id="treasure" data-event='Ruby Hunt'><span class="treasure" id="icon4"></span></a>
+				<a href="#" class="glow_link" id="it" data-event='JBoss'><span class="it" id="icon5"></span></a>
+				<a href="#" class="glow_link" id="paper" data-event='Papyrus'><span class="paper" id="icon6"></span></a>
+				<a href="#" class="glow_link" id="gaming" data-event='Open Arena'><span class="gaming" id="icon7"></span></a>
+				<a href="#" class="glow_link" id="dumb" data-event='Drupal Czip'><span class="dumb" id="icon8"></span></a>
+				<a href="#" class="glow_link" id="quiz" data-event='Kwiz'><span class="quiz" id="icon9"></span></a>
+				<a href="#" class="glow_link" id="web" data-event='Web Script'><span class="web" id="icon10"></span></a>
 			</div>
       <div class="row" style="margin: 0px;">
         <div class="span3">
@@ -152,7 +235,7 @@ techniques both in practical fields as well in academics.</p>
 	    
         <div class="span3">
 			<a href="#" class="home_link" data-test="test1" id="ban_img3">
-          <h2 id="gallery-head"><center>Gallery</center></h2>
+          <h2 id="gallery-head"><center>Register</center></h2>
           <p></p>
           
 			</a>
@@ -165,7 +248,8 @@ techniques both in practical fields as well in academics.</p>
         </div>
 		 </a>
       </div>
-	  
+	  	
+	  	<a href='#' title="Home" style="position: absolute;margin-top: -5px;margin-left: -15px;display: none;" id='back_arrow'><img src="img/back_arrow.png"/></a>
 			<center>
 	      <hr id="footer_hr1" style="width: 10px;border: 1px solid #08c;">
 			</center>		

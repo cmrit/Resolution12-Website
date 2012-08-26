@@ -117,11 +117,16 @@ techniques both in practical fields as well in academics.</p>
 					<hr style="width: 100%;border: 1px solid #08c;">
 				</div>
 				<div class="modal-body" style="margin-top: -5px;" id="events_body">
-					<form class="form-horizontal">
+					<form class="form-horizontal" id="register_form" method="POST" action="response/entries.php?option=create">
+					<div class="control-group" id="js_messages">
+					<center><span id="no_college" style="display: none;">Your college not in the list? <a href="mailto:resolution.cmrit@gmail.com" target="_BLANK">Mail Us!</a></span></center>
+					<div class="controls">
+					</div>
+				  </div>
 				  <div class="control-group">
 					<label class="control-label" for="inputEmail">College Name: </label>
 					<div class="controls">
-					 <input type="text" id="college_name" placeholder="College Name" class="span3" style="margin: 0 auto;" data-provide="typeahead" data-items="4" data-source='["Christ University","Kristu Jayanthi College"]'>
+					 <input type="text" autocomplete="off" id="college_name" name="college_name" placeholder="College Name" class="span3" style="margin: 0 auto;" data-provide="typeahead" data-items="4" data-source='["Christ University","Kristu Jayanthi College","Al-Ameen College","BMS Institute of Technology","BMS College of Engineering","NMKRV - Jayanagar","Bangalore Institute of Technology","SSMRV - Jayanagar","Surana college","Jain College - V.V. Puram","Jain College - J.C. Road","Jyothi Nivas College","Alliance College","AMC College","T. John Institute of Technology","PES Institute of Technology","R.V. College of Engineering","Rajarajeshwari College","Ambedkar College - Mysore Road","Bangalore City College","Indian Academy","CMR Institute of Management Studies","Hasnath College","Indo Asian Academy","Garden City College","East Point College","Dayananda Sagar College - VTU","Dayananda Sagar College - BU","MES College","M.S. Ramaiah Institute of Technology","East West College","KLE Soceity","Vivekananda College - Rajajinagar","Sir M. Visvesvaraya Institute of Technology","Reva Institute for Engineering and Technology","NITTE Meenakshi Institute of Technology","MVJ College of Engineering","New Horizon College of Engineering","Mount Carmel College","Acharya Institute of Technology","Bapuji Institute of Technology","Cambridge Institute of Technology","Alpha College of Engineering","KNS Institute of Technology","Oxford College of Engineering","PES School of Engineering","RNS Institute of Technology","SJC Institute of Technology","Sambhram Institute Of Technology","SCT Institute of Technology"]'>
 					</div>
 				  </div>
 				  <div class="control-group">
@@ -151,13 +156,6 @@ techniques both in practical fields as well in academics.</p>
 				   <div class="control-group" id="student_name_fields">
 					
 				  </div>
-				  <div class="control-group">
-					<label class="control-label" for="inputEmail">Student Co-ordinator: </label>
-					<div class="controls">
-					 <input type="text" id="stu_rep_phone" placeholder="Name" class="span3" style="margin: 0 auto;" >
-					 <input type="text" id="stu_rep_phone" placeholder="Mobile Number" class="span3" style="margin: 0 auto;" >
-					</div>
-				  </div>
 				 <div class="control-group">
 					
 					<div class="controls">
@@ -167,7 +165,8 @@ techniques both in practical fields as well in academics.</p>
 				</form>
 				</div>
 				<div class="modal-footer" style="background-color: #000;">
-					<button type="submit" class="btn btn-success">Submit &raquo;</button>
+					<div id="attendees" class="span5" style="float: left;color: #ccc;"></div>
+					<input type="submit" id="register_btn" class="btn btn-success" value="Submit &raquo;" />
 				</div>
 			</div>
 	  <!-- End Registration Modal-->
@@ -253,9 +252,18 @@ techniques both in practical fields as well in academics.</p>
 			<center>
 	      <hr id="footer_hr1" style="width: 10px;border: 1px solid #08c;">
 			</center>		
-			
+			<center>
+			<div class="span12" id="news_updates" style="margin-top: -10px;color: #999;">
+				<p>Resolution '12 theme based on Free and Open source Technologies</p>
+				<p>Tweet with <a href='#'>#cmritmcafest</a></p>
+			</div>
+			</center>
       <footer>
-        <p>&copy; Resolution '12, Department of MCA, CMRIT</p>
+        <div class="social_icons">
+        	<a href="#" class="single_icon" id="social1"><img src="img/twitter_small.png"></a>
+        	<a href="#" class="single_icon" id="social2"><img src="img/fb_small.png"></a>
+        	<a href="#" class="single_icon" id="social3"><img src="img/google_plus_small.png"></a>
+        </div>
       </footer>
 		
     </div> <!-- /container -->
@@ -264,7 +272,8 @@ techniques both in practical fields as well in academics.</p>
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="js/jquery.min.js"></script>
-	 <script src="js/bootstrap.js"></script>
-	 <script src="js/resolution.js">	 </script>
+		<script src="js/bootstrap.js"></script>
+		<script src="js/jquery.form.js"></script>
+		<script src="js/resolution.js">	 </script>
   </body>
 </html>

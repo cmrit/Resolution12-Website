@@ -5035,3 +5035,19 @@ a.home_link:hover{
 	box-shadow: 0 0 80px 1px #fff;
 	background-color: 	#ccc;
 }
+
+#news_updates > p{
+	display: none;
+	position: inline-block;
+}
+
+.social_icons{
+	position: absolute;
+	padding-left: 880px;
+	margin-top: -10px;
+}
+
+.single_icon{
+	width: 20px;
+	opacity: 1.0;
+}

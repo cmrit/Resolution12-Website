@@ -20,7 +20,7 @@
     <![endif]-->
 
     <!-- Le fav and touch icons -->
-    <link rel="shortcut icon" href="../assets/ico/favicon.ico">
+    <link rel="shortcut icon" href="img/favicon.ico">
     <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../assets/ico/apple-touch-icon-144-precomposed.png">
     <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../assets/ico/apple-touch-icon-114-precomposed.png">
     <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../assets/ico/apple-touch-icon-72-precomposed.png">
@@ -55,7 +55,7 @@ techniques both in practical fields as well in academics.</p>
 					<h3 style="font-family: my_font;font-size:20px;border: 0px;"><span id="test_img"><b>About</b></span></h3>
 					<hr style="width: 100%;border: 1px solid #08c;">
 				</div>
-				<div class="modal-body" style="margin-top: -30px;" id="events_body">
+				<div class="modal-body" style="margin-top: -30px;color: #eee;font-size: 14px;" id="events_body">
 				<span id="events_body_span">
 					<h3 style="font-family: my_font;letter-spacing: 3px;">Introduction: </h3>
 							<p>CMRIT is  set up in order to meet the rapid  growing need of I.T. Professionals. The  broad  objectives  of   CMRIT  is  to impart quality education and help students to   develop  creative  thinking, analytical ability   and    to     acquire    managerial 
@@ -97,11 +97,11 @@ techniques both in practical fields as well in academics.</p>
 							<table style='font-size: 14px;'>
 								<tr>
 									<td>Swaroop SM: &nbsp;
-									<td>+91 9945139749
+									<td>+91 9945 13 9749
 								</tr>
 								<tr>
 									<td>Narendra Shetty: &nbsp; 
-									<td>+91 9945394428
+									<td>+91 9945 39 4428
 								</tr>
 							</table>
 				</div>
@@ -112,25 +112,46 @@ techniques both in practical fields as well in academics.</p>
 	  <!-- Registration Modal -->
 		<div class="modal hide fade link_modal" id="registerModal" style="">
 				<div class="modal-header">
-				<button type="button" class="close" data-dismiss="modal">x</button>
-					<h3 style="font-family: my_font;font-size:20px;border: 0px;"><span id="test_img"><b>Registration</b></span></h3>
+					<h3 style="font-family: my_font;font-size:20px;border: 0px;"><span id="test_img"><b id="register_heading">Registration</b></span></h3>
+					<a href="#" id="rules_link" style="float: right;margin-top: -20px;">General Rules</a>
+					<a href="#" id="back_link" style="float: right;margin-top: -20px;display: none;">Back</a>
 					<hr style="width: 100%;border: 1px solid #08c;">
 				</div>
 				<div class="modal-body" style="margin-top: -5px;" id="events_body">
+				<div id="general_rules" style="display: none;color: #eee;font-size: 14px;">
+					<p>
+						* All participants should report to registration/reception desk at the venue on 14th September at 08:00 AM.
+					</p>
+					<p>
+						* Authorization letter from college is mandatory.
+					</p>
+					<p>
+						* College ID’s of all team members is compulsary.
+					</p>
+					<p>
+						* Registration fee : Rs. 100/- per member.
+					</p>
+					<p>
+						* College won’t be responsible for any untoward incidents happening.
+					</p>
+					<p>
+						* Misbehaviour of the participants inside the campus will not be tolerated and could lead to disqualification of team.
+					</p>
+				</div>
 					<form class="form-horizontal" id="register_form" method="POST" action="response/entries.php?option=create">
 					<div class="control-group" id="js_messages">
-					<center><span id="no_college" style="display: none;">Your college not in the list? <a href="mailto:resolution.cmrit@gmail.com" target="_BLANK">Mail Us!</a></span></center>
+					<center><span id="no_college" style="display: none;"></span></center>
 					<div class="controls">
 					</div>
 				  </div>
 				  <div class="control-group">
 					<label class="control-label" for="inputEmail">College Name: </label>
 					<div class="controls">
-					 <input type="text" autocomplete="off" id="college_name" name="college_name" placeholder="College Name" class="span3" style="margin: 0 auto;" data-provide="typeahead" data-items="4" data-source='["Christ University","Kristu Jayanthi College","Al-Ameen College","BMS Institute of Technology","BMS College of Engineering","NMKRV - Jayanagar","Bangalore Institute of Technology","SSMRV - Jayanagar","Surana college","Jain College - V.V. Puram","Jain College - J.C. Road","Jyothi Nivas College","Alliance College","AMC College","T. John Institute of Technology","PES Institute of Technology","R.V. College of Engineering","Rajarajeshwari College","Ambedkar College - Mysore Road","Bangalore City College","Indian Academy","CMR Institute of Management Studies","Hasnath College","Indo Asian Academy","Garden City College","East Point College","Dayananda Sagar College - VTU","Dayananda Sagar College - BU","MES College","M.S. Ramaiah Institute of Technology","East West College","KLE Soceity","Vivekananda College - Rajajinagar","Sir M. Visvesvaraya Institute of Technology","Reva Institute for Engineering and Technology","NITTE Meenakshi Institute of Technology","MVJ College of Engineering","New Horizon College of Engineering","Mount Carmel College","Acharya Institute of Technology","Bapuji Institute of Technology","Cambridge Institute of Technology","Alpha College of Engineering","KNS Institute of Technology","Oxford College of Engineering","PES School of Engineering","RNS Institute of Technology","SJC Institute of Technology","Sambhram Institute Of Technology","SCT Institute of Technology"]'>
+					 <input type="text" autocomplete="off" id="college_name" name="college_name" placeholder="College Name" class="span3" style="margin: 0 auto;" data-provide="typeahead" data-items="4" data-source='["Christ University","Kristu Jayanthi College","Al-Ameen College","BMS Institute of Technology","BMS College of Engineering","NMKRV - Jayanagar","Bangalore Institute of Technology","SSMRV - Jayanagar","Surana college","Jain College - V.V. Puram","Jain College - J.C. Road","Jyothi Nivas College","Alliance College","AMC Engineering College","T. John Institute of Technology","PES Institute of Technology","R.V. College of Engineering","Rajarajeshwari College","Ambedkar College - Mysore Road","Bangalore City College","Indian Academy","CMR Institute of Management Studies","Hasnath College","Indo Asian Academy","Garden City College","East Point College","Dayananda Sagar College - VTU","Dayananda Sagar College - BU","MES College","M.S. Ramaiah Institute of Technology","East West College","KLE Soceity","Vivekananda College - Rajajinagar","Sir M. Visvesvaraya Institute of Technology","Reva Institute for Engineering and Technology","NITTE Meenakshi Institute of Technology","MVJ College of Engineering","New Horizon College of Engineering","Mount Carmel College","Acharya Institute of Technology","Bapuji Institute of Technology","Cambridge Institute of Technology","Alpha College of Engineering","KNS Institute of Technology","Oxford College of Engineering","PES School of Engineering","RNS Institute of Technology","SJC Institute of Technology","Sambhram Institute Of Technology","SCT Institute of Technology"]'>
 					</div>
 				  </div>
-				  <div class="control-group">
-					<label class="control-label" for="inputPassword">No. of Participants: </label>
+				  <div class="control-group" style="display: none;" id="students_block">
+					<label class="control-label" for="inputPassword">Add Participants: </label>
 					<div class="controls">
 					  <select id="no_students">
 					  <option value="">--Select--</option>
@@ -170,7 +191,9 @@ techniques both in practical fields as well in academics.</p>
 				</div>
 			</div>
 	  <!-- End Registration Modal-->
-	  
+	  		<div>
+	  			<a href="http://it.cmr.ac.in/" target="_BLANK" style="position: absolute;z-index: 11111111;"><img src="img/cmr_logo.png" width="110" /></a>
+	  		</div>
        <div class="blah" style="height: 600px;" id="blah">
 			<div class="span3"  id="banner1" style="height: 600px;">
 				<img src="img/banner1.gif" style="display: none;" id="ban_img1"/>
@@ -254,15 +277,15 @@ techniques both in practical fields as well in academics.</p>
 			</center>		
 			<center>
 			<div class="span12" id="news_updates" style="margin-top: -10px;color: #999;">
-				<p>Resolution '12 theme based on Free and Open source Technologies</p>
-				<p>Tweet with <a href='#'>#cmritmcafest</a></p>
+				<p>Schedule available <a href='pdf/schedule1.pdf' target='_BLANK'>here.</a></p>
+				<p>Tweet with <a href='https://twitter.com/#!/search/realtime/cmritmcafest' target="_BLANK">#cmritmcafest</a></p>
 			</div>
 			</center>
       <footer>
         <div class="social_icons">
-        	<a href="#" class="single_icon" id="social1"><img src="img/twitter_small.png"></a>
-        	<a href="#" class="single_icon" id="social2"><img src="img/fb_small.png"></a>
-        	<a href="#" class="single_icon" id="social3"><img src="img/google_plus_small.png"></a>
+        	<a href="https://twitter.com/CmritMcaFest" target="_BLANK" class="single_icon" id="social1"><img src="img/twitter_small.png"></a>
+        	<a href="https://www.facebook.com/CmritResolution" target="_BLANK" class="single_icon" id="social2"><img src="img/fb_small.png"></a>
+        	<a href="https://plus.google.com/events/cdm11mb457325brb1drlvi8jvr0/114836011975849547535" class="single_icon" target="_BLANK" id="social3"><img src="img/google_plus_small.png"></a>
         </div>
       </footer>
 		

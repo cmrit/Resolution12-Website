@@ -121,18 +121,23 @@ $(document).ready(function(){
 				return false;
 			});
 			
+			var msg="";
 			
 			$("#college_name").live("change",function(){
 				if ($(this).attr('data-source').indexOf($(this).val()) > -1) {
 					$("#no_college").fadeOut(500);
+					$("#student_name_fields").html('').fadeOut(500)
+					$("#students_block").fadeIn(500);
 					$("#register_btn").attr("disabled",false);
+					msg='';
 				}
 				else{
-					$("#no_college").fadeIn(500);
+					msg='Your college not in the list? <a href="mailto:resolution.cmrit@gmail.com" target="_BLANK">Mail Us!</a>';
+					$("#students_block").fadeOut(500);
 					$("#register_btn").attr("disabled",true);
-					return;
 				}
 				get_attendees();
+				$("#no_college").html(msg).fadeIn(500);
 				return false;
 			});
 			
@@ -189,10 +194,11 @@ $(document).ready(function(){
 						success: function(data){
 							if(data.status){
 								get_attendees();
+								$("#student_name_fields").html('').fadeOut(500)
 								$("#register_form")[0].reset();
 							}
 							else{
-								$("#js_messages").html('<span class="alert alert-danger span6" style="margin-top: -10px;"><button type="button" class="close" data-dismiss="alert">&times;</button>Error...</span>').fadeIn(500);
+								$("#js_messages").html('<span class="alert alert-danger span6" style="margin-top: -10px;"><button type="button" class="close" data-dismiss="alert">&times;</button><center>There was an error, make sure all details are filled</center></span>').fadeIn(500);
 							}
 						},
 						error: function(err){
@@ -205,9 +211,23 @@ $(document).ready(function(){
 			});
 			
 			
-			function insert_attendees(){
-				
-			}
+			$("#rules_link").live("click",function(){
+				$(this).hide()
+				$("#register_heading").html('General Rules').hide().fadeIn(500);
+				$("#back_link").fadeIn(500);
+				$("#register_form").hide();
+				$("#register_btn").hide();
+				$("#general_rules").fadeIn(500);
+			});
+			
+			$("#back_link").live("click",function(){
+				$(this).hide()
+				$("#register_heading").html('Registration').hide().fadeIn(500);
+				$("#rules_link").fadeIn(500);
+				$("#register_form").fadeIn(500);
+				$("#register_btn").fadeIn(500);
+				$("#general_rules").hide();
+			});
 			
 			function show_first(){
 			
@@ -233,25 +253,25 @@ $(document).ready(function(){
 				switch(eve)
 				{
 					case  "ice" :
-			   $("#events_body").html("<p> Rules </p><p>*	This is the Ice Breaker event<br>* Colleges aiming for overall traphy must take part<br>* All participants of the college must be involved<br>* Props not allowed<br>*  Any kind of vulgarity will lead to disqualification<br>* Time limit : 4 + 1 minutes<br><hr>Student Co-ordinators :<br>Namita : +91 9902 76 5929</p>").hide().fadeIn(500); break;
+			   $("#events_body").html("<h3 class='rules_text'> Rules: </h3><p>*	This is the Ice Breaker event<br>* Colleges aiming for overall trophy must take part<br>* All participants of the college must be involved<br>* Props not allowed<br>*  Any kind of vulgarity will lead to disqualification<br>* Time limit : 4 + 1 minutes<br><br>Start Time: 10:00 AM<hr><h4 class='rules_text'>Student Co-ordinators: </h4>Namita : +91 9902 76 5929</p>").hide().fadeIn(500); break;
 					case  "web" :
-					$("#events_body").html("<p> Rules </p><p>* Max. 2 teams per college and 2 members per team<br>* Prelims : [30 mins]<br>- Basic HTML and CSS should be used<br>- Question is given on spot<br>- Coding should be done in Notepad<br>* Finals : [1hr 15mins]<br>- Html, CSS, Javascript should be used<br>- Question and Images are given on spot<br>- Dreamweaver CS5, GIMP, Photoshop CS5	and jQuery library are provided<br>* Use of Internet and any kind of storage devices is not allowed<br>* Decision of the judge is considered to be final<br><hr>Student Co-ordinators :<br>Arun 			 	 : +91 9738 08 0932 <br>Karthik S M	 : +91 9986 62 7349</p>").hide().fadeIn(500); break;
+					$("#events_body").html("<h3 class='rules_text'> Rules: </h3><p>* Max. 2 teams per college and 2 members per team<br>* Prelims : [30 mins]<br>- Basic HTML and CSS should be used<br>- Question is given on spot<br>- Coding should be done in Notepad<br>* Finals : [1hr 15mins]<br>- Html, CSS, Javascript should be used<br>- Question and Images are given on spot<br>- Dreamweaver CS5, GIMP, Photoshop CS5	and jQuery library are provided<br>* Use of Internet and any kind of storage devices is not allowed<br>* Decision of the judge is considered to be final<br><br>Start Time: 11:00 AM<hr><h4 class='rules_text'>Student Co-ordinators: </h4>Arun 			 	 : +91 9738 08 0932 <br>Karthik S M	 : +91 9986 62 7349</p>").hide().fadeIn(500); break;
 					case  "coding" :
-					$("#events_body").html("<p> Rules </p><p>* Max. 2 teams per college and 2 members per team<br>* Prelims :<br>	- 40 mins time limit, 30 Questions<br>* Finals : <br>	- 1 hour time limit, 3 or 4 Questions<br>* Decision of the judge is considered to be final<br><hr>Student Co-ordinators :<br>Suprith     : 	+91 9964 04 4174<br>Obaidulla : +91 9886 38 2484</p>").hide().fadeIn(500); break;
+					$("#events_body").html("<h3 class='rules_text'> Rules: </h3><p>* Max. 2 teams per college and 2 members per team<br>* Prelims :<br>	- 40 mins time limit, 30 Questions<br>* Finals : <br>	- 1 hour time limit, 3 or 4 Questions<br>* Decision of the judge is considered to be final<br><br>Start Time: 11:30 AM<hr><h4 class='rules_text'>Student Co-ordinators: </h4>Suprith     : 	+91 9964 04 4174<br>Obaidulla : +91 9886 38 2484</p>").hide().fadeIn(500); break;
 					case  "photo" :
-					$("#events_body").html("<p> * Max. 2 teams per college and 1 member per team<br>* Any camera above 2 Mega pixels can be used<br>* Themes are provided on spot<br>* 3 pics should be submitted on the theme selected<br>* Only Brightness and contrast can be adjusted, no effects should be added<br>* Pics can be submitted either in a CD or a Pen Drive<br>* Decision of the judge is considered to be final<br><hr>Student Co-ordinators :<br>Tiju    : +91 9986 43 6068<br>Rahul : +91 8147 75 3238</p>").hide().fadeIn(500); break;
+					$("#events_body").html("<h3 class='rules_text'> Rules: </h3><p> * Max. 2 teams per college and 1 member per team<br>* Any camera above 2 Mega pixels can be used<br>* Themes are provided on spot<br>* 3 pics should be submitted on the theme selected<br>* Only Brightness and contrast can be adjusted, no effects should be added<br>* Pics can be submitted either in a CD or a Pen Drive<br>* Decision of the judge is considered to be final<br><br>Start Time: 11:30 AM<hr><h4 class='rules_text'>Student Co-ordinators: </h4>Tiju    : +91 9986 43 6068<br>Rahul : +91 8147 75 3238</p>").hide().fadeIn(500); break;
 					case  "treasure" :
-					$("#events_body").html("<p> * Max. 2 teams per college and 2 members per team<br>* Event will be of one round<br>* Treasure hunt within the computer<br>* 45 mins time limit<br>* Decision of the judge is considered to be final<br><hr>Student Co-ordinators :<br>Ramakrishna : +91 9538 11 4711<br>Manjunath	: +91 8867 45 3679 </p>").hide().fadeIn(500); break;
+					$("#events_body").html("<h3 class='rules_text'> Rules: </h3><p> * Max. 2 teams per college and 2 members per team<br>* Event will be of one round<br>* Treasure hunt within the computer<br>* 45 mins time limit<br>* Decision of the judge is considered to be final<br><br>Start Time: 12:00 PM<hr><h4 class='rules_text'>Student Co-ordinators: </h4>Ramakrishna : +91 9538 11 4711<br>Manjunath	: +91 8867 45 3679 </p>").hide().fadeIn(500); break;
 					case  "it" :
-					$("#events_body").html("<p> * Max. 2 participants per college<br>* Event will be of 4 rounds<br>* Round 1 : Pick 'n' Speak<br>* Round 2 : Creative Writing<br>* Round 3 : Group Discussion<br>* Round 4 : Stress Interview<br>* Decision of the judge is considered to be final<br><hr>Student Co-ordinators :<br>Naveen : +91 9036 95 1203<br>Jisha	  	:  +91 9964 09 0096</p>").hide().fadeIn(500); break;
+					$("#events_body").html("<h3 class='rules_text'> Rules: </h3><p> * Max. 2 participants per college<br>* Event will be of 4 rounds<br>* Round 1 : Pick 'n' Speak<br>* Round 2 : Creative Writing<br>* Round 3 : Group Discussion<br>* Round 4 : Stress Interview<br>* Decision of the judge is considered to be final<br><br>Start Time: 11:30 AM<hr><h4 class='rules_text'>Student Co-ordinators: </h4>Naveen : +91 9036 95 1203<br>Jisha	  	:  +91 9964 09 0096</p>").hide().fadeIn(500); break;
 					case  "paper" :
-					$("#events_body").html("<p> * Max. 2 teams per college and 2 members per team<br>* Topic of your own choice(open source preferred) <br>* Soft Copy of papers should be sent by E-mail<br>* An acknowledgement mail will be sent if the paper is selected<br>* The ppt's should also be sent by E-mail on or before the event date<br>* Decision of the judge is considered to be final<br>E-mail : resolution.cmrit@gmail.com<br><hr>Student Co-ordinators :<br>Supreetha : +91 9901 62 9093<br>Madhuri    : +91 9845 72 9775</p>").hide().fadeIn(500); break;
+					$("#events_body").html("<h3 class='rules_text'> Rules: </h3><p> * Max. 2 teams per college and 2 members per team<br>* Topic of your own choice(open source preferred) <br>* Soft Copy of papers should be sent by E-mail<br>* An acknowledgement mail will be sent if the paper is selected<br>* The ppt's should also be sent by E-mail on or before the event date<br>* Decision of the judge is considered to be final<br>E-mail : resolution.cmrit@gmail.com<br><br>Start Time: 10:00 AM<hr><h4 class='rules_text'>Student Co-ordinators: </h4>Supreetha : +91 9901 62 9093<br>Madhuri    : +91 9845 72 9775</p>").hide().fadeIn(500); break;
 					case  "gaming" :
-					$("#events_body").html("<p> * NFS Most Wanted :<br>	- 5 teams per college, 1 member per team<br>	- Knock-out Match<br>* Counter Strike : <br>- 1 team per college and 4 members per team<br>- Knock-out Match<br>* Decision of the judge is considered to be final<br><hr>Student Co-ordinators :<br>Ujwal (CS)		 	: +91 9686 62 0314<br>Deanish (NFS)	: +91 8904 29 5861</p>").hide().fadeIn(500); break;
+					$("#events_body").html("<h3 class='rules_text'> Rules: </h3><p> * NFS Most Wanted :<br>	- 5 teams per college, 1 member per team<br>	- Knock-out Match<br><br>* Counter Strike : <br>- 1 team per college and 4 members per team<br>- Knock-out Match<br><br>* Decision of the judge is considered to be final<br><br>Start Time: 01:00 PM<hr><h4 class='rules_text'>Student Co-ordinators: </h4>Ujwal (CS)		 	: +91 9686 62 0314<br>Deanish (NFS)	: +91 8904 29 5861</p>").hide().fadeIn(500); break;
 					case  "dumb" :
-					$("#events_body").html("<p> * Max. 2 teams per college and 3 members per team<br>* Event will be of 3 rounds<br>* Round 1 : Prelims<br>* Round 2 : Semi Finals<br>* Round 3 : Finals<br>* All Dumb Charades rules apply (No Word splitting, no lip movement etc)<br>* Decision of the judge is considered 	to be final<br><hr>Student Co-ordinators :<br>Shashank   	: +91 9686 24 7855<br>Jijo : +91 7795 34 9802</p>").hide().fadeIn(500); break;
+					$("#events_body").html("<p> * Max. 2 teams per college and 3 members per team<br>* Event will be of 3 rounds<br>* Round 1 : Prelims<br>* Round 2 : Semi Finals<br>* Round 3 : Finals<br>* All Dumb Charades rules apply (No Word splitting, no lip movement etc)<br>* Decision of the judge is considered 	to be final<br><br>Start Time: 01:00 PM<hr><h4 class='rules_text'>Student Co-ordinators: </h4>Shashank   	: +91 9686 24 7855<br>Jijo : +91 7795 34 9802</p>").hide().fadeIn(500); break;
 					case  "quiz" :
-					$("#events_body").html("<p> * Max. 3 teams per college and 2 members per team<br>* Round 1: Written (Prelims)<br>* Round 2: Stage Event (Finals)<br>* Tie-Breaker to resolve a tie<br>* Use of laptops, mobiles or other electronic devices is strictly prohibited<br>* Decision of the Quiz Master is considered to be final<br><hr>Student Co-ordinators :<br>Krishna    : +91 8904 85 3975<br>Karthik R  : +91 7259 70 4449</p>").hide().fadeIn(500); break;
+					$("#events_body").html("<h3 class='rules_text'> Rules: </h3><p> * Max. 3 teams per college and 2 members per team<br>* Round 1: Written (Prelims)<br>* Round 2: Stage Event (Finals)<br>* Tie-Breaker to resolve a tie<br>* Use of laptops, mobiles or other electronic devices is strictly prohibited<br>* Decision of the Quiz Master is considered to be final<br><br>Start Time: 11:15 AM<hr><h4 class='rules_text'>Student Co-ordinators: </h4>Krishna    : +91 8904 85 3975<br>Karthik R  : +91 7259 70 4449</p>").hide().fadeIn(500); break;
 			   }
 			}
 			

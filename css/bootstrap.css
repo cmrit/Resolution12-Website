@@ -5043,11 +5043,17 @@ a.home_link:hover{
 
 .social_icons{
 	position: absolute;
-	padding-left: 880px;
+	margin-left: 880px;
 	margin-top: -10px;
 }
 
 .single_icon{
 	width: 20px;
 	opacity: 1.0;
+}
+
+.rules_text{
+	font-family: my_font;
+	letter-spacing: 3px;
+	color: #ccc;
 }
